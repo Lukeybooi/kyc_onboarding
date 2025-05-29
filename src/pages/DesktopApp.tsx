@@ -96,16 +96,14 @@ const DesktopApp: React.FC = () => {
         </Toolbar>
         <Divider />
         <List>
-          {["Chat"].map((text) => (
-            <ListItem button key={text} sx={{ px: open ? 3 : 2.5 }}>
-              <ListItemIcon
-                sx={{ color: "inherit", minWidth: "auto", mr: open ? 2 : 0 }}
-              >
-                <DesktopWindows />
-              </ListItemIcon>
-              {open && <ListItemText primary={text} />}
-            </ListItem>
-          ))}
+          <ListItem button sx={{ px: open ? 3 : 2.5 }}>
+            <ListItemIcon
+              sx={{ color: "inherit", minWidth: "auto", mr: open ? 2 : 0 }}
+            >
+              <DesktopWindows />
+            </ListItemIcon>
+            {open && <ListItemText primary={"Chat"} />}
+          </ListItem>
         </List>
       </Drawer>
 
