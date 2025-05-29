@@ -63,9 +63,11 @@ const MessageInput: React.FC<MessageInputProps> = ({ onSend, deviceType }) => {
     handleFileClose();
   };
 
-  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files.length > 0) {
-      const file = e.target.files[0];
+  const handleFileChange = async ({
+    target: { files },
+  }: React.ChangeEvent<HTMLInputElement>) => {
+    if (files && files.length > 0) {
+      const file = files[0];
       setUploading(true);
 
       try {
