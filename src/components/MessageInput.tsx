@@ -21,10 +21,13 @@ import EmojiPicker, { EmojiClickData } from "emoji-picker-react";
 import React, { Fragment, useRef, useState } from "react";
 import { uploadFile } from "../services/firebase";
 import { MessageInputProps } from "../types/messages";
+import { AlertDialog } from "./AlertDialog";
 
 const MessageInput: React.FC<MessageInputProps> = ({ onSend, deviceType }) => {
   const [message, setMessage] = useState("");
   const [emojiOpen, setEmojiOpen] = useState(false);
+  const [dialogOpen, setDialogOpen] = useState(false);
+
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
   const [uploading, setUploading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -44,7 +47,7 @@ const MessageInput: React.FC<MessageInputProps> = ({ onSend, deviceType }) => {
   };
 
   const handleFileClick = (_event: React.MouseEvent<HTMLButtonElement>) => {
-    alert("Oops! Feature temporarily disabled.");
+    setDialogOpen(true);
     // Feature temporarily disabled because of Firebase implementation.
     // setAnchorEl(_event.currentTarget);
   };
@@ -80,8 +83,18 @@ const MessageInput: React.FC<MessageInputProps> = ({ onSend, deviceType }) => {
     }
   };
 
+  const handleDialogVisibility = () => {
+    setDialogOpen(false);
+  };
+
   return (
     <Fragment>
+      <AlertDialog
+        title="File Attachment in Chat"
+        body="Unfortunately the feature is temporarily disabled."
+        open={dialogOpen}
+        handleClose={handleDialogVisibility}
+      />
       <form onSubmit={handleSubmit}>
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <input
