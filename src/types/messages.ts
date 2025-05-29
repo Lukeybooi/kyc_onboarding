@@ -15,7 +15,7 @@ export type MessageInputProps = {
   deviceType: "desktop" | "mobile";
 };
 
-export type DialogInputProps = {
+export type AlertDialogProps = {
   title: string;
   body: string;
   open: boolean;

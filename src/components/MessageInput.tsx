@@ -27,7 +27,6 @@ const MessageInput: React.FC<MessageInputProps> = ({ onSend, deviceType }) => {
   const [message, setMessage] = useState("");
   const [emojiOpen, setEmojiOpen] = useState(false);
   const [dialogOpen, setDialogOpen] = useState(false);
-
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
   const [uploading, setUploading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
