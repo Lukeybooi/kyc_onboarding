@@ -33,3 +33,15 @@ This application demonstrates real-time communication between desktop and mobile
 - React Router
 - Jest & Testing Library
 - date-fns for date formatting
+
+## Example of .env.local
+
+```
+REACT_APP_FIREBASE_API_KEY={{ your-api-key }}
+REACT_APP_FIREBASE_AUTH_DOMAIN={{ your-project.firebaseapp.com }}
+REACT_APP_FIREBASE_DATABASE_URL={{ https://your-project.firebaseio.com }}
+REACT_APP_FIREBASE_PROJECT_ID={{ your-project-id }}
+REACT_APP_FIREBASE_STORAGE_BUCKET={{ your-project.appspot.com }}
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID={{ your-sender-id }}
+REACT_APP_FIREBASE_APP_ID={{ your-app-id }}
+```
